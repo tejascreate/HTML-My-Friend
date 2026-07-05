@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Quiz - 50 Marks</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 style="text-align:center;">HTML Quiz</h1>
+    <h2>Total Marks: 50</h2>
+
+    <form id="quizForm">
+
+        <p><b>1. What does HTML stand for?</b></p>
+        <input type="radio" name="q1" value="correct"> Hyper Text Markup Language<br>
+        <input type="radio" name="q1" value="wrong"> High Text Machine Language<br>
+        <input type="radio" name="q1" value="wrong"> Hyper Transfer Markup Language<br><br>
+
+        <p><b>2. Which tag creates the largest heading?</b></p>
+        <input type="radio" name="q2" value="correct"> h1<br>
+        <input type="radio" name="q2" value="wrong"> h6<br>
+        <input type="radio" name="q2" value="wrong"> heading<br><br>
+
+        <p><b>3. Which tag is used for paragraphs?</b></p>
+        <input type="radio" name="q3" value="correct"> p<br>
+        <input type="radio" name="q3" value="wrong"> para<br>
+        <input type="radio" name="q3" value="wrong"> text<br><br>
+
+        <p><b>4. Which tag creates a hyperlink?</b></p>
+        <input type="radio" name="q4" value="correct"> a<br>
+        <input type="radio" name="q4" value="wrong"> href<br>
+        <input type="radio" name="q4" value="wrong"> link<br><br>
+
+        <p><b>5. Which attribute specifies the destination of a link?</b></p>
+        <input type="radio" name="q5" value="correct"> href<br>
+        <input type="radio" name="q5" value="wrong"> src<br>
+        <input type="radio" name="q5" value="wrong"> alt<br><br>
+
+        <p><b>6. Which tag displays an image?</b></p>
+        <input type="radio" name="q6" value="correct"> img<br>
+        <input type="radio" name="q6" value="wrong"> image<br>
+        <input type="radio" name="q6" value="wrong"> picture<br><br>
+
+        <p><b>7. Which attribute defines image location?</b></p>
+        <input type="radio" name="q7" value="correct"> src<br>
+        <input type="radio" name="q7" value="wrong"> href<br>
+        <input type="radio" name="q7" value="wrong"> alt<br><br>
+
+        <p><b>8. Which tag creates a line break?</b></p>
+        <input type="radio" name="q8" value="correct"> br<br>
+        <input type="radio" name="q8" value="wrong"> break<br>
+        <input type="radio" name="q8" value="wrong"> lb<br><br>
+
+        <p><b>9. Which tag creates a horizontal line?</b></p>
+        <input type="radio" name="q9" value="correct"> hr<br>
+        <input type="radio" name="q9" value="wrong"> line<br>
+        <input type="radio" name="q9" value="wrong"> border<br><br>
+
+        <p><b>10. Which tag creates a bullet list?</b></p>
+        <input type="radio" name="q10" value="correct"> ul<br>
+        <input type="radio" name="q10" value="wrong"> ol<br>
+        <input type="radio" name="q10" value="wrong"> li<br><br>
+
+        <!-- Add questions 11 to 50 in the same format -->
+
+        <button type="button" onclick="calculateScore()">
+            Submit Quiz
+        </button>
+
+    </form>
+
+    <h2 id="result"></h2>
+
+    <script>
+        function calculateScore() {
+
+            let score = 0;
+
+            for(let i = 1; i <= 50; i++) {
+
+                let answer =
+                document.querySelector(
+                'input[name="q'+i+'"]:checked'
+                );
+
+                if(answer && answer.value === "correct") {
+                    score++;
+                }
+            }
+
+            document.getElementById("result")
+            .innerHTML =
+            "Your Score: " + score + " / 50";
+        }
+    </script>
+    <a href="HTML COURCE.HTML">Back to Home Page</a>
+    <script src="script.js"></script>
+
+</body>
+</html>
